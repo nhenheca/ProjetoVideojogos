@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.635172, g: 0.6777548, b: 0.77677155, a: 1}
+  m_IndirectSpecularColor: {r: 0.63520175, g: 0.67774445, b: 0.77679706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11336,6 +11336,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4169151072282030432, guid: e209161463eae954c8d1bbb18b66f877, type: 3}
   m_PrefabInstance: {fileID: 3826552382935979356}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &919132149307532354
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149307532348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b05a89ab78f3d1b46b414fe390750dfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3826552382935979356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11387,6 +11407,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.8999939
       objectReference: {fileID: 0}
+    - target: {fileID: 3826552382783884332, guid: e209161463eae954c8d1bbb18b66f877, type: 3}
+      propertyPath: animations
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4169151072282030432, guid: e209161463eae954c8d1bbb18b66f877, type: 3}
       propertyPath: m_Name
       value: Pistol
@@ -11399,7 +11423,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pistol
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3826552382783884331, guid: e209161463eae954c8d1bbb18b66f877, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e209161463eae954c8d1bbb18b66f877, type: 3}
 --- !u!1001 &8556399318269782326
 PrefabInstance:
