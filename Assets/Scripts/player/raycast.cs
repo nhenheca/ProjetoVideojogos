@@ -38,7 +38,11 @@ public class raycast : MonoBehaviour
 
     private Camera fpsCam;
 
-    [SerializeField] private Animation animations;
+    // Alterações aqui. Animations já não deve ser usado a não ser para animações Legacy
+    // Devemos recorrer ao Animator
+    // Fonte: https://forum.unity.com/threads/animationclip-must-be-marked-as-legacy.213952/
+
+    //[SerializeField] private Animation animations;
     private Animator animator;
 
     private int ammoPistolSmg;
@@ -50,8 +54,10 @@ public class raycast : MonoBehaviour
 
     void Start()
     {
+        // Alterações aqui. Ir buscar o Componente do Animator e não o do Animation
         animator = GetComponent<Animator>();
         //animations = GetComponent<Animation>();
+
         gunAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
         
@@ -66,7 +72,10 @@ public class raycast : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            animations.Play("reload");
+            // Atenção: Há alterações no Animator do Pistol. Teve de ser criado um novo "IdleState" e uma transição do "reload"
+            // para esse novo estado, de modo a se poder voltar a fazer o reload após a animação corre a primeira vez.
+            // Ver janela do Animator.
+            animator.Play("reload");
         }
         // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
         if (Input.GetButton("Fire1") && Time.time > nextFire /*&& ammo>0*/)
