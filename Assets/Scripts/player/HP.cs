@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class HP : MonoBehaviour
 {
-    [SerializeField] private int playerHp = 20;
+    private int playerHp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHp = GameManager.Instance.getHp();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        playerHp = GameManager.Instance.getHp();
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Projectile")
         {
-            playerHp = playerHp - Random.Range(1, 3);
+            GameManager.Instance.hp -= Random.Range(1, 3);
             Destroy(collision.gameObject);
         }
         
-        if (playerHp <= 0)
+        if (GameManager.Instance.hp <= 0)
         {
             Time.timeScale = 0f;
         }

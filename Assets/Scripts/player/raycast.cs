@@ -75,7 +75,7 @@ public class raycast : MonoBehaviour
             // Atenção: Há alterações no Animator do Pistol. Teve de ser criado um novo "IdleState" e uma transição do "reload"
             // para esse novo estado, de modo a se poder voltar a fazer o reload após a animação corre a primeira vez.
             // Ver janela do Animator.
-            animator.Play("reload");
+            //animator.Play("reload");
         }
         // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
         if (Input.GetButton("Fire1") && Time.time > nextFire /*&& ammo>0*/)

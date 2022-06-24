@@ -69,24 +69,37 @@ public class checkBuys : MonoBehaviour
 
     public void buyAmmo(int ammoPos)
     {
+        int freeMoney = GameManager.Instance.getMoney();
         if (ammoPos == 0)
         {
-            GameManager.Instance.ammoPistolSmg += 90;
-            GameManager.Instance.addMoney(-ammoPrices[0]);
+            if (freeMoney >= weaponPrices[ammoPos - 1])
+            {
+                GameManager.Instance.ammoPistolSmg += 180;
+                GameManager.Instance.addMoney(-ammoPrices[0]);
+            }
         }else if(ammoPos == 1)
         {
-            GameManager.Instance.ammoShotgun += 30;
-            GameManager.Instance.addMoney(-ammoPrices[1]);
+            if (freeMoney >= weaponPrices[ammoPos - 1])
+            {
+                GameManager.Instance.ammoShotgun += 90;
+                GameManager.Instance.addMoney(-ammoPrices[1]);
+            }
         }
         else if (ammoPos == 2)
         {
-            GameManager.Instance.ammoRifle += 30;
-            GameManager.Instance.addMoney(-ammoPrices[2]);
+            if (freeMoney >= weaponPrices[ammoPos - 1])
+            {
+                GameManager.Instance.ammoRifle += 90;
+                GameManager.Instance.addMoney(-ammoPrices[2]);
+            }
         }
         else if (ammoPos == 3)
         {
-            GameManager.Instance.ammoRpg += 3;
-            GameManager.Instance.addMoney(-ammoPrices[3]);
+            if (freeMoney >= weaponPrices[ammoPos - 1])
+            {
+                GameManager.Instance.ammoRpg += 5;
+                GameManager.Instance.addMoney(-ammoPrices[3]);
+            }
         }
     }
     public void buyBuff(int buffPos)

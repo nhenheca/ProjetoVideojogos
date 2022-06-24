@@ -12,6 +12,7 @@ TagManager:
   - Smg
   - Rifle
   - Rpg
+  - Tower
   layers:
   - Default
   - TransparentFX

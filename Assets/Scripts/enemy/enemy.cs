@@ -28,20 +28,24 @@ public class enemy : MonoBehaviour
 
     [SerializeField] public bool isElProfessoro;
 
+    private float initialSpeed;
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         pathReference = GetComponent<path>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
         painTrigger = hp * painTrigger;
         enemyAudio = GetComponent<AudioSource>();
+        initialSpeed = agent.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(agent.speed<initialSpeed)
+            agent.speed=initialSpeed;
     }
     public void doDamage(int damage)
     {

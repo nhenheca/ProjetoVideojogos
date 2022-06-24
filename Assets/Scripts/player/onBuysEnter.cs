@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class onBuysEnter : MonoBehaviour
 {
+    public GameObject referenceToTrigger;
     [SerializeField] GameObject tutorUi;
+    [SerializeField] GameObject towerUi;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,18 @@ public class onBuysEnter : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        referenceToTrigger = other.gameObject;
         if (other.gameObject.tag == "Tutor")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             tutorUi.SetActive(true);
+        }
+        if (other.gameObject.tag == "Tower")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            towerUi.SetActive(true);
         }
     }
 
@@ -33,6 +42,12 @@ public class onBuysEnter : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             tutorUi.SetActive(false);
+        }
+        if (other.gameObject.tag == "Tower")
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            towerUi.SetActive(false);
         }
     }
 }

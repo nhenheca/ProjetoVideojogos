@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] public int mapHp;
     [SerializeField] 
     private int money;
+    [SerializeField]
+    public int hp;
 
     public int ammoPistolSmg;
     public int ammoShotgun;
@@ -53,5 +56,10 @@ public class GameManager : MonoBehaviour
     {
         weapons[currentWepaon] = weapon;
         currentWepaon++;
+    }
+
+    public int getHp()
+    {
+        return hp;
     }
 }

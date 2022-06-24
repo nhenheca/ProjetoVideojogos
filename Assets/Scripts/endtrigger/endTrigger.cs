@@ -5,7 +5,6 @@ using UnityEngine;
 public class endTrigger : MonoBehaviour
 {
     [SerializeField]
-    int hp=100;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +15,7 @@ public class endTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0)
+        if (GameManager.Instance.mapHp <= 0)
         {
             Time.timeScale=0;
         }
@@ -27,7 +26,7 @@ public class endTrigger : MonoBehaviour
         enemy enemy = other.GetComponent<enemy>();
         if (enemy != null)
         {
-            hp = hp - enemy.getDamage();
+            GameManager.Instance.mapHp -= enemy.getDamage();
             enemy.destroyItself();
         }
     }
